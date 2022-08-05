@@ -1,0 +1,217 @@
+@use '../tools/mixins.scss';
+
+$bg-progress: rgba(255,255,255, 0.4);
+$bg-progress-active: #2289ff;
+$white: #ffffff;
+
+* {
+    box-sizing: border-box;
+}
+
+.video-player {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    color: $white;
+
+    user-select: none;
+    overflow: hidden;
+    max-width: 900px;
+    border-radius: 5px;
+    background: #000;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+
+    &__video {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.video-control-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &__center-side {
+        justify-content: center;
+    }
+
+    &__right-side {
+        justify-content: flex-end;
+    }
+
+    &__options {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);       
+        z-index: 0; 
+    }
+
+    &__top {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__bottom {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 5px 10px;
+        z-index: 1;
+    }
+
+}
+
+.video-timeline {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    background: $bg-progress;
+    cursor: pointer;
+
+    &__progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: $bg-progress-active;
+        width: 0%;
+        @include mixins.animate(width);
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: $bg-progress-active;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.video-controls {
+    @include mixins.listreset();
+    display: flex;
+    align-items: center;
+
+    &__item {
+        
+    }
+
+    &__time-duration {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    &__time-total {
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+
+    &__btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: $white;
+
+        .icon-backward,
+        .icon-forward,
+        .icon-play {
+            font-size: 18px;
+        }
+
+        .icon-volume-high {
+            font-size: 16px;
+        }
+
+        .icon-video-camera {
+            font-size: 18px;
+        }
+
+        .icon-fullscreen {
+            font-size: 16px;
+        }
+
+        .icon-pic-in-pic {
+            font-size: 20px;
+        }
+    }
+}
+
+.video-volume-control {
+}
+
+.video-volume-slider {
+    margin: 0 10px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    width: 58px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &__progress {
+        height: 4px;
+        background: $bg-progress;
+    }
+
+    &__handle {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        margin-top: -6px;
+        background: $white;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 0;
+            height: 3px;
+            margin-top: -2px;
+            width: 58px;
+        }
+
+        &::before {
+            left: -58px;
+            background: $white;
+        }
+
+        &::after {
+            left: 6px;
+            background: rgba(255,255,255,.2);
+        }
+    }
+}

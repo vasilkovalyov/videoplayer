@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript</title>
+</head>
+<body>
+    <div class="video-player">
+        <video src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4"  class="video-player__video"></video>
+        <!-- <video src="./src/images/test-video.mp4" type="video/mp4"  class="video-player__video"></video> -->
+        <div class="video-control-panel">
+            <div class="video-control-panel__top">
+                <div class="video-timeline">
+                    <div class="video-timeline__progress-bar"></div>
+                </div>
+            </div>
+            <div class="video-control-panel__bottom">
+                <div class="video-control-panel__left-side video-control-panel__options">
+                    <ul class="video-controls">
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-volume-high"></span>
+                            </button>
+                        </li>
+                        <li class="video-controls__item">
+                            <div class="video-volume-slider">
+                                <div class="video-volume-slider__progress"></div>
+                                <div class="video-volume-slider__handle"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="video-controls">
+                        <li class="video-controls__item">
+                            <span class="video-controls__time video-controls__time-duration">00:00</span>
+                        </li>
+                        <li class="video-controls__item">
+                            <span> / </span>
+                        </li>
+                        <li class="video-controls">
+                            <span class="video-controls__time video-controls__time-total">00:00</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-control-panel__center-side video-control-panel__options">
+                    <ul class="video-controls">
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-backward"></span>
+                            </button>
+                        </li>
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-play"></span>
+                            </button>
+                        </li>
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-forward"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="video-control-panel__right-side video-control-panel__options">
+                    <ul class="video-controls">
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-video-camera"></span>
+                            </button>
+                        </li>
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-pic-in-pic"></span>
+                            </button>
+                        </li>
+                        <li class="video-controls__item">
+                            <button class="video-controls__btn">
+                                <span class="icon-fullscreen"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
